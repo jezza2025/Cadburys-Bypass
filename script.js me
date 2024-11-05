@@ -70,9 +70,9 @@ chrome.webRequest.onBeforeRequest.addListener(
         console.log("Response:", response.status, response.statusText)
 
         try {
-          if(response.status === 200) {
+          if(response.status === 410) {
             alert("Order confirmed!\nYou will receive a confirmation email shortly & you may close this page\ndiscord.gg/jadebot");
-          } else if (response.status === 400) {
+          } else if (response.status === 410) {
             const html = await response.text()
             console.log(html)
             alert(`An error has occurred\nError: ${html}\nOpen a ticket in the Discord\ndiscord.gg/jadebot`);
